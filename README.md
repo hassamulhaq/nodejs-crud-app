@@ -14,3 +14,8 @@ sudo npm cache clean -f
 ```shell
 npm run dev:server
 ```
+
+___
+#### How to fix [nodemon] app crashed error and unknown file extension issues?
+https://github.com/TypeStrong/ts-node/issues/2100#issuecomment-2525323898
+___
