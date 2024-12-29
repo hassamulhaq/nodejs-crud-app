@@ -1,7 +1,9 @@
 import express from 'express';
 import dotenv from "dotenv";
 import cors from "cors";
-import pool from "./config/db.js";
+import router from "./routes/api.js"
+import errorHandlerMiddleware from "./middlewares/errorHandlerMiddleware.js"
+import createUsersTable from "./migrations/createUsersTable.js";
 
 dotenv.config();
 
@@ -12,16 +14,14 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors());
 
+// error handling
+app.use(errorHandlerMiddleware);
+
+// migrations
+createUsersTable();
+
 // routes
-app.get("/", async (req, res) => {
-    try {
-        const result = await pool.query("SELECT current_database()");
-        res.send(`Db name is ${result.rows[0].current_database}`);
-    } catch (error) {
-        console.error('Error querying database', error);
-        res.status(500).send('Error querying database');
-    }
-});
+app.use('/api', router);
 
 // server running
 app.listen(port, () => {
