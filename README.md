@@ -3,7 +3,16 @@
 
 ### Docker postgres image run
 ```shell
-docker run --name postgres-db -e POSTGRES_PASSWORD -p 5432:5432 -d postgres
+docker run --name postgres-db -e POSTGRES_PASSWORD=P@$$w0rd -p 5432:5432 -d postgres
+
+# details
+docker ps
+
+# inspect
+docker inspect CONTAINER_ID
+
+# connect
+docker exec -it postgres-db psql -U postgres
 ```
 
 
