@@ -1,3 +1,24 @@
+
+
+
+### Docker postgres image run
+```shell
+docker run --name postgres-db -e POSTGRES_PASSWORD -p 5432:5432 -d postgres
+```
+
+
+### kill port
+```shell
+sudo lsof -i :5001
+#COMMAND   PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+# node    21307 hassam   25u  IPv6 230828      0t0  TCP *:5001 (LISTEN)
+sudo kill -9 21307
+
+sudo lsof -i :5001
+# empty
+```
+
+
 ### requirements
 ```text
 `node -v` --> v22.12.0
@@ -7,12 +28,12 @@
 
 ### clean npm cache
 ```shell
-sudo npm cache clean -f
+sudo pnpm cache clean -f
 ```
 
 ### start nodemon server
 ```shell
-npm run dev:server
+pnpm run dev:server
 ```
 
 ___

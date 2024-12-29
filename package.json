@@ -1,28 +1,32 @@
 {
   "name": "nodejs-crud-app",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "nodemon"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.7",
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
-    "typescript": "~5.6.2",
-    "vite": "^6.0.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hassamulhaq/nodejs-crud-app.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hassamulhaq/nodejs-crud-app/issues"
+  },
+  "homepage": "https://github.com/hassamulhaq/nodejs-crud-app#readme",
   "dependencies": {
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.10.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "joi": "^17.13.3",
     "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
